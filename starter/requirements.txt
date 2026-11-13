@@ -1,4 +1,4 @@
-# Core setup and PDF parsing. Choose and install an embedding SDK separately.
-psycopg[binary]==3.3.8
+# Core ingestion, local Chroma store, and local ONNX embeddings.
+chromadb==1.5.9
 pypdf>=5,<7
 python-dotenv>=1,<2

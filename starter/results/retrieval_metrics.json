@@ -1,0 +1,225 @@
+{
+  "run_id": "2026-11-13T21:41:04+07:00",
+  "python_version": "3.14.10",
+  "chromadb_version": "1.5.9",
+  "embedding_provider": "chroma-local",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2 (Chroma ONNX)",
+  "embedding_dimensions": 384,
+  "vector_store": "Chroma PersistentClient",
+  "vector_store_path": "C:\\Users\\thang\\Works\\aithucchien\\K5-L3-Day06-KieuVanThang-2A202603424-DataIngestionEngineering\\starter\\data\\chroma",
+  "distance_metric": "cosine",
+  "search_type": "Chroma HNSW approximate nearest-neighbor",
+  "corpus_units": 30,
+  "benchmark_questions": 20,
+  "split_counts": {
+    "dev": 15,
+    "test": 5
+  },
+  "top_k": 3,
+  "selection_rule": "Select by dev Evidence Hit@3, then dev Evidence Hit@1, then manual grounding/metadata and resource use. Test was not used for tuning.",
+  "evidence_metric_definition": "Strict automatic proxy: the retrieved chunk must match a gold document/unit and contain the normalized evidence quote verbatim. It may undercount equivalent evidence requiring human confirmation; manual grounding is recorded separately.",
+  "timing": {
+    "query_embeddings_total_seconds": 3.920840600001611,
+    "query_embeddings_reused_across_strategies": true,
+    "vector_search_total_seconds_by_strategy": {
+      "A": 0.07245539999712491,
+      "B": 0.05248069999652216,
+      "C": 0.14305399999648216
+    }
+  },
+  "retrieval_metrics": {
+    "A": {
+      "dev": {
+        "questions": 15,
+        "evidence_hit_at_1": {
+          "hits": 8,
+          "total": 15,
+          "rate": 0.5333333333333333
+        },
+        "evidence_hit_at_3": {
+          "hits": 9,
+          "total": 15,
+          "rate": 0.6
+        }
+      },
+      "test": {
+        "questions": 5,
+        "evidence_hit_at_1": {
+          "hits": 3,
+          "total": 5,
+          "rate": 0.6
+        },
+        "evidence_hit_at_3": {
+          "hits": 4,
+          "total": 5,
+          "rate": 0.8
+        }
+      },
+      "all": {
+        "questions": 20,
+        "evidence_hit_at_1": {
+          "hits": 11,
+          "total": 20,
+          "rate": 0.55
+        },
+        "evidence_hit_at_3": {
+          "hits": 13,
+          "total": 20,
+          "rate": 0.65
+        }
+      }
+    },
+    "B": {
+      "dev": {
+        "questions": 15,
+        "evidence_hit_at_1": {
+          "hits": 7,
+          "total": 15,
+          "rate": 0.4666666666666667
+        },
+        "evidence_hit_at_3": {
+          "hits": 12,
+          "total": 15,
+          "rate": 0.8
+        }
+      },
+      "test": {
+        "questions": 5,
+        "evidence_hit_at_1": {
+          "hits": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "evidence_hit_at_3": {
+          "hits": 5,
+          "total": 5,
+          "rate": 1.0
+        }
+      },
+      "all": {
+        "questions": 20,
+        "evidence_hit_at_1": {
+          "hits": 12,
+          "total": 20,
+          "rate": 0.6
+        },
+        "evidence_hit_at_3": {
+          "hits": 17,
+          "total": 20,
+          "rate": 0.85
+        }
+      }
+    },
+    "C": {
+      "dev": {
+        "questions": 15,
+        "evidence_hit_at_1": {
+          "hits": 7,
+          "total": 15,
+          "rate": 0.4666666666666667
+        },
+        "evidence_hit_at_3": {
+          "hits": 12,
+          "total": 15,
+          "rate": 0.8
+        }
+      },
+      "test": {
+        "questions": 5,
+        "evidence_hit_at_1": {
+          "hits": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "evidence_hit_at_3": {
+          "hits": 5,
+          "total": 5,
+          "rate": 1.0
+        }
+      },
+      "all": {
+        "questions": 20,
+        "evidence_hit_at_1": {
+          "hits": 12,
+          "total": 20,
+          "rate": 0.6
+        },
+        "evidence_hit_at_3": {
+          "hits": 17,
+          "total": 20,
+          "rate": 0.85
+        }
+      },
+      "filter_compliance": {
+        "questions_compliant": 6,
+        "questions_with_filter": 6,
+        "rate": 1.0
+      }
+    }
+  },
+  "metadata_and_filter_audit": {
+    "test_top3_metadata": {
+      "valid_records": 45,
+      "total_records": 45,
+      "rate": 1.0,
+      "method": "Automated comparison of returned metadata with the source corpus; manual audit labels are recorded separately in metadata_audit.csv."
+    },
+    "strategy_C_test_filter_compliance": {
+      "compliant_questions": 2,
+      "questions_with_filter": 2,
+      "question_rate": 1.0,
+      "compliant_records": 6,
+      "records_with_filter": 6,
+      "record_rate": 1.0
+    },
+    "strategy_C_dev_filter_compliance": {
+      "compliant_questions": 4,
+      "questions_with_filter": 4,
+      "question_rate": 1.0,
+      "compliant_records": 12,
+      "records_with_filter": 12,
+      "record_rate": 1.0
+    },
+    "manual_labeling": {
+      "metadata_rows": 45,
+      "grounding_rows": 15,
+      "coherence_rows": 30,
+      "labels_filled_by_pipeline": 0,
+      "labels_present_in_saved_audit_csvs": true,
+      "instruction": "The pipeline does not generate subjective labels. Saved labels are AI-assisted drafts reviewed and confirmed by the student according to the student; do not treat automatic evidence matching as a human grounding score."
+    },
+    "manual_ai_assisted_summary": {
+      "rater": "Student reviewer, according to the user; initial judgments were AI-assisted drafts",
+      "student_review_status": "The student reports reviewing and confirming all saved audit labels.",
+      "ai_assistance": "AI assisted the initial scores and reasons; that provenance is retained in each CSV row.",
+      "metadata_correct": {
+        "yes": 45,
+        "total": 45
+      },
+      "metadata_useful": {
+        "yes": 45,
+        "total": 45
+      },
+      "coherence_score_counts": {
+        "0": 0,
+        "1": 13,
+        "2": 17
+      },
+      "coherence_mean_out_of_2": 1.5666666666666667,
+      "grounding_score_counts": {
+        "0": 0,
+        "1": 1,
+        "2": 14
+      },
+      "grounding_mean_out_of_2": 1.9333333333333333,
+      "limitation": "The review was not independent or blind; AI-assisted drafts may introduce confirmation bias."
+    }
+  },
+  "manual_review_status": "Student reports reviewing and confirming the AI-assisted draft labels; AI assistance remains disclosed and no independent second-rater review is claimed.",
+  "trace_file": "results\\retrieval_traces.jsonl",
+  "audit_files": [
+    "metadata_audit.csv",
+    "grounding_audit.csv",
+    "coherence_audit.csv"
+  ]
+}
